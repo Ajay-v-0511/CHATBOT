@@ -1,0 +1,24 @@
+{
+  "name": "smartassist-ai",
+  "version": "1.0.0",
+  "description": "SmartAssist AI - Full-Stack Intelligent Student Chatbot",
+  "scripts": {
+    "start": "node server/index.js",
+    "server": "node server/index.js",
+    "client": "npm --prefix client run dev",
+    "test": "node test-api.js",
+    "build": "npm --prefix client run build"
+  },
+  "keywords": [
+    "ai",
+    "chatbot",
+    "student",
+    "education",
+    "react",
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "ISC"
+}
