@@ -1,5 +1,5 @@
 // API client with token & guest handling
-const API_BASE = '';
+const API_BASE = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
 
 const getAuthHeaders = () => {
   const token = localStorage.getItem('token');
@@ -24,7 +24,7 @@ export const getGuestId = () => {
 async function handleResponse(response) {
   const data = await response.json().catch(() => ({}));
   if (!response.ok) {
-    const error = new Error(data.message || 'Network request failed');
+    const error = new Error(data.message || `Request failed (${response.status}: ${response.statusText || 'Error'})`);
     error.status = response.status;
     error.data = data;
     throw error;
